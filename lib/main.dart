@@ -31,17 +31,6 @@ class _LoginState extends State<Login> {
     }
   }
 
-  @override
-  void initState() {
-    // TODO: implement initState
-    super.initState();
-  }
-
-  @override
-  void dispose() {
-    super.dispose();
-  }
-
   void _submit() {
     final form = formKey.currentState;
     if (form.validate()) {
@@ -80,6 +69,7 @@ class _LoginState extends State<Login> {
               new TextFormField(
                 decoration: new InputDecoration(labelText: "Password"),
                 validator: validatePassword,
+                obscureText: true,
                 onSaved: (val) => _password = val,
               ),
               RaisedButton(
